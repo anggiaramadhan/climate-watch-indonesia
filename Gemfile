@@ -58,6 +58,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
+  # Capistrano for deploy
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rvm'
 end
 
 group :test do
@@ -67,7 +72,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-git 'https://github.com/ClimateWatch-Vizzuality/climate-watch-gems.git' do
+git 'https://github.com/anggiaramadhan/climate-watch-gems' do
   gem 'climate_watch_engine', '~> 1.4.3'
   gem 'cw_locations', '~> 1.4.0', require: 'locations'
   gem 'cw_historical_emissions', '~> 1.5.0', require: 'historical_emissions'
