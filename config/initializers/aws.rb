@@ -1,11 +1,10 @@
-S3_BUCKET_URL = "https://#{Rails.application.secrets.aws_region}.digitaloceanspaces.com/#{Rails.application.secrets.s3_bucket_name}"
+S3_BUCKET_URL = "https://#{Rails.application.secrets.s3_bucket_name}.#{Rails.application.secrets.aws_region}.digitaloceanspaces.com/#{Rails.application.secrets.s3_bucket_name}"
 
 CW_FILES_PREFIX = ENV['CW_FILES_PREFIX']
 
 return if Rails.env.test?
 Aws.config.update({
   region: Rails.application.secrets.aws_region,
-  bucket: Rails.application.secrets.s3_bucket_name,
   credentials: Aws::Credentials.new(
     Rails.application.secrets.aws_access_key_id,
     Rails.application.secrets.aws_secret_access_key
