@@ -15,11 +15,6 @@ production:
   <<: *default
   url: <%= ENV['POSTGRES_URL'] %>
 
-staging:
-  <<: *default
-  username: postgres
-  url: <%= ENV['POSTGRES_URL'] %>
-
 # Config for second shared database
 secondbase:
   production:
