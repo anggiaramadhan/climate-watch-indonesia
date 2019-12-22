@@ -56,3 +56,6 @@ bower.json
 .vscode/
 coverage
 package-lock.json
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
