@@ -1,4 +1,4 @@
-S3_BUCKET_URL = "https://#{Rails.application.secrets.s3_bucket_name}.#{Rails.application.secrets.aws_region}.digitaloceanspaces.com/#{Rails.application.secrets.s3_bucket_name}"
+S3_BUCKET_URL = "https://s3-#{Rails.application.secrets.aws_region}.amazonaws.com/#{Rails.application.secrets.s3_bucket_name}"
 
 CW_FILES_PREFIX = ENV['CW_FILES_PREFIX']
 
@@ -9,5 +9,5 @@ Aws.config.update({
     Rails.application.secrets.aws_access_key_id,
     Rails.application.secrets.aws_secret_access_key
   ),
-  endpoint: "https://#{Rails.application.secrets.aws_region}.digitaloceanspaces.com"
+  endpoint: "https://s3.amazonaws.com"
 })
